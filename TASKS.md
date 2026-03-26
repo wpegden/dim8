@@ -20,3 +20,4 @@
 - [x] Wrote a comprehensive `PLAN.md` that separates the paper-faithful core from optional later-source extensions.
 - [x] Added `PaperDefinitions.lean`, `PaperTheorems.lean`, and the initial support-module skeleton with paper-facing core definitions and theorem signatures.
 - [x] Tightened the root `PaperDefinitions.lean` and `PaperTheorems.lean` files so they carry the real public statement surface: typed Schwartz/Fourier data on `R8`, the explicit linear combination defining `g`, non-tautological `E_8` interface statements, and standalone Lake build targets.
+- [x] Separated the `E_8` lattice norm facts into `2ℕ` versus `2ℕ_{>0}`, exposed the Section 4 special values of `a` and `b` in the public theorem statements, and replaced the dimension-only main theorem wrapper with a packing-level statement over centers and density.

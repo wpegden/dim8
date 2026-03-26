@@ -1,6 +1,7 @@
 import Dim8.E8Lattice
 import Dim8.PackingBounds
 import Dim8.Section5Signs
+import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Distribution.SchwartzSpace.Fourier
 
 open scoped FourierTransform SchwartzMap
@@ -39,9 +40,36 @@ def IsImaginaryValued (f : SchwartzR8) : Prop :=
 def VanishesOnE8OutsideMinimalShell (f : SchwartzR8) : Prop :=
   ∀ x, x ∈ Lambda8 → 2 < sqNorm x → f x = 0
 
+/-- The nonnegative even squared norms occurring for vectors in the `E_8` lattice. -/
+def HasEvenSquaredNorm (r : ℝ) : Prop :=
+  ∃ n : ℕ, r = ((2 * n : ℕ) : ℝ)
+
 /-- The squared norms excluded by the stronger "moreover" clause in Theorem `g`. -/
 def HasPositiveEvenSquaredNorm (r : ℝ) : Prop :=
   ∃ n : ℕ, 0 < n ∧ r = ((2 * n : ℕ) : ℝ)
+
+/-- The common value of a radial Schwartz function on the sphere of radius `r`. -/
+def HasSphericalValue (f : SchwartzR8) (r : ℝ) (z : ℂ) : Prop :=
+  ∀ x, ‖x‖ = r → f x = z
+
+/-- A paper-facing way to talk about the derivative of the radial profile of a Schwartz
+function. -/
+def HasRadialDerivativeAt (f : SchwartzR8) (r : ℝ) (z : ℂ) : Prop :=
+  ∃ radialProfile : ℝ → ℂ,
+    (∀ x, f x = radialProfile ‖x‖) ∧
+    HasDerivAt radialProfile z r
+
+/-- The special value `a(0) = -i 8640 / π` from Section 4. -/
+def paperAValueAtZero : ℂ :=
+  -((((8640 : ℝ) / Real.pi : ℝ) : ℂ) * Complex.I)
+
+/-- The special radial derivative `a'(sqrt 2) = i 72 sqrt 2 / π` from Section 4. -/
+def paperADerivativeAtSqrtTwo : ℂ :=
+  ((((72 : ℝ) * Real.sqrt 2 / Real.pi : ℝ) : ℂ) * Complex.I)
+
+/-- The special radial derivative `b'(sqrt 2) = 2 sqrt 2 π i` from Section 4. -/
+def paperBDerivativeAtSqrtTwo : ℂ :=
+  ((((2 : ℝ) * Real.sqrt 2 * Real.pi : ℝ) : ℂ) * Complex.I)
 
 /-- Paper-facing interface for the Section 4 function `a`. -/
 def IsPaperFunctionA (a : SchwartzR8) : Prop :=
@@ -90,5 +118,9 @@ def GCoreProperties (g : SchwartzR8) : Prop :=
 /-- Later-source strengthening of the paper's Theorem `g`. -/
 def GNonvanishingExtension (g : SchwartzR8) : Prop :=
   ∀ x, ¬ HasPositiveEvenSquaredNorm (sqNorm x) → g x ≠ 0 ∧ fourierSchwartzR8 g x ≠ 0
+
+/-- Paper-facing unit-ball packing predicate on sets of centers in `R8`. -/
+def IsUnitBallPacking (centers : Set R8) : Prop :=
+  ∀ x y, x ∈ centers → y ∈ centers → x ≠ y → 2 ≤ ‖x - y‖
 
 end Dim8
