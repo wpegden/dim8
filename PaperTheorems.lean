@@ -16,6 +16,22 @@ def e8PositiveSquaredNormStatement : Prop :=
 def e8MinimalDistanceStatement : Prop :=
   ∀ x y : R8, x ∈ Lambda8 → y ∈ Lambda8 → x ≠ y → Real.sqrt 2 ≤ ‖x - y‖
 
+/-- Paper Section 2: every `E_8` lattice vector has squared norm in `2ℕ`. -/
+theorem e8SquaredNorm : e8SquaredNormStatement := by
+  intro x hx
+  simpa [e8SquaredNormStatement, HasEvenSquaredNorm] using sqNorm_eq_two_mul_nat x hx
+
+/-- Paper Section 2: every nonzero `E_8` lattice vector has positive even squared norm. -/
+theorem e8PositiveSquaredNorm : e8PositiveSquaredNormStatement := by
+  intro x hx hx0
+  simpa [e8PositiveSquaredNormStatement, HasPositiveEvenSquaredNorm] using
+    sqNorm_eq_two_mul_nat_of_ne_zero x hx hx0
+
+/-- Paper Section 2: distinct `E_8` lattice points are separated by distance at least `sqrt 2`. -/
+theorem e8MinimalDistance : e8MinimalDistanceStatement := by
+  intro x y hx hy hxy
+  exact sqrt_two_le_norm_sub_of_ne x y hx hy hxy
+
 /-- Section 4 public output for the function `a`. -/
 def theoremAStatement : Prop :=
   ∃ a : SchwartzR8,

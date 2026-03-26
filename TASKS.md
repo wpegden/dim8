@@ -2,15 +2,16 @@
 
 <!-- SUPERVISOR_TASKS:START -->
 ## Supervisor Tasks
-- [ ] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
-- [ ] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
-- [ ] Keep the files easy for a human to compare against the paper.
-- [ ] Make both files syntactically valid Lean.
+- [ ] Prove the target statements presented in `PaperTheorems.lean`.
+- [ ] Keep reusable proof infrastructure in separate support files when that yields a cleaner project structure.
+- [ ] Maintain `TASKS.md` and `PLAN.md` as the proof frontier moves.
+- [ ] Keep sorrys within the configured policy.
+- [ ] Do not introduce unapproved axioms.
 <!-- SUPERVISOR_TASKS:END -->
 
 ## Worker Tasks
-- [ ] Replace the paper-facing `E_8` predicates with an actual internal lattice object and begin proving the interface lemmas in `Dim8/E8Lattice.lean`.
-- [ ] Refine the abstract statement bundles in `PaperTheorems.lean` into proved theorems, starting with the `E_8` lattice interface and the `g_core_properties` split.
+- [x] Replace the paper-facing `E_8` predicates with an actual internal lattice object and prove the first interface lemmas in `Dim8/E8Lattice.lean` (`e8SquaredNorm`, `e8PositiveSquaredNorm`, `e8MinimalDistance`).
+- [ ] Extend the proved wrappers in `PaperTheorems.lean` from the `E_8` lattice interface to the Section 4 `a`/`b` outputs and the `g_core_properties` split.
 - [ ] Decide the proof source for the Section 5 sign lemmas (`Romik/Lee` replacement proof versus an in-repo certificate) before committing to the endgame for `g`.
 
 ## Completed
