@@ -2,10 +2,10 @@
 
 <!-- SUPERVISOR_TASKS:START -->
 ## Supervisor Tasks
-- [x] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
-- [x] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
-- [x] Keep the files easy for a human to compare against the paper.
-- [x] Make both files syntactically valid Lean.
+- [ ] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
+- [ ] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
+- [ ] Keep the files easy for a human to compare against the paper.
+- [ ] Make both files syntactically valid Lean.
 <!-- SUPERVISOR_TASKS:END -->
 
 ## Worker Tasks
@@ -21,3 +21,4 @@
 - [x] Added `PaperDefinitions.lean`, `PaperTheorems.lean`, and the initial support-module skeleton with paper-facing core definitions and theorem signatures.
 - [x] Tightened the root `PaperDefinitions.lean` and `PaperTheorems.lean` files so they carry the real public statement surface: typed Schwartz/Fourier data on `R8`, the explicit linear combination defining `g`, non-tautological `E_8` interface statements, and standalone Lake build targets.
 - [x] Separated the `E_8` lattice norm facts into `2ℕ` versus `2ℕ_{>0}`, exposed the Section 4 special values of `a` and `b` in the public theorem statements, and replaced the dimension-only main theorem wrapper with a packing-level statement over centers and density.
+- [x] Strengthened the `g` interface so Fourier-side nonnegativity is stated as a real-valued nonnegativity condition, and added explicit double-zero clauses for the Section 4 public `a`/`b` statements.

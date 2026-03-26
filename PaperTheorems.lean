@@ -20,6 +20,7 @@ def e8MinimalDistanceStatement : Prop :=
 def theoremAStatement : Prop :=
   ∃ a : SchwartzR8,
     IsPaperFunctionA a ∧
+      HasDoubleZerosOnE8OutsideMinimalShell a ∧
       HasSphericalValue a 0 paperAValueAtZero ∧
       HasSphericalValue a (Real.sqrt 2) 0 ∧
       HasRadialDerivativeAt a (Real.sqrt 2) paperADerivativeAtSqrtTwo
@@ -28,6 +29,7 @@ def theoremAStatement : Prop :=
 def theoremBStatement : Prop :=
   ∃ b : SchwartzR8,
     IsPaperFunctionB b ∧
+      HasDoubleZerosOnE8OutsideMinimalShell b ∧
       HasSphericalValue b 0 0 ∧
       HasSphericalValue b (Real.sqrt 2) 0 ∧
       HasRadialDerivativeAt b (Real.sqrt 2) paperBDerivativeAtSqrtTwo

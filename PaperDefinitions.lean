@@ -71,6 +71,21 @@ def paperADerivativeAtSqrtTwo : ℂ :=
 def paperBDerivativeAtSqrtTwo : ℂ :=
   ((((2 : ℝ) * Real.sqrt 2 * Real.pi : ℝ) : ℂ) * Complex.I)
 
+/-- A paper-facing predicate for a function taking nonnegative real values. -/
+def IsNonnegativeRealValued (f : SchwartzR8) : Prop :=
+  IsRealValued f ∧
+    ∀ x, 0 ≤ (f x).re
+
+/-- The radial function has a double zero at radius `r`. -/
+def HasDoubleZeroAtRadius (f : SchwartzR8) (r : ℝ) : Prop :=
+  HasSphericalValue f r 0 ∧
+    HasRadialDerivativeAt f r 0
+
+/-- The radial function has double zeroes at all `E_8` lattice radii strictly larger than
+`sqrt 2`. -/
+def HasDoubleZerosOnE8OutsideMinimalShell (f : SchwartzR8) : Prop :=
+  ∀ x, x ∈ Lambda8 → 2 < sqNorm x → HasDoubleZeroAtRadius f ‖x‖
+
 /-- Paper-facing interface for the Section 4 function `a`. -/
 def IsPaperFunctionA (a : SchwartzR8) : Prop :=
   IsRadialSchwartz a ∧
@@ -100,7 +115,7 @@ def GCondition1 (g : SchwartzR8) : Prop :=
 
 /-- Paper condition `(g2)`. -/
 def GCondition2 (g : SchwartzR8) : Prop :=
-  ∀ x, 0 ≤ (fourierSchwartzR8 g x).re
+  IsNonnegativeRealValued (fourierSchwartzR8 g)
 
 /-- Paper condition `(g3)`. -/
 def GCondition3 (g : SchwartzR8) : Prop :=
