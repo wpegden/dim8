@@ -11,8 +11,9 @@
 
 ## Worker Tasks
 - [x] Replace the paper-facing `E_8` predicates with an actual internal lattice object and prove the first interface lemmas in `Dim8/E8Lattice.lean` (`e8SquaredNorm`, `e8PositiveSquaredNorm`, `e8MinimalDistance`).
-- [ ] Extend the proved wrappers in `PaperTheorems.lean` from the `E_8` lattice interface to the Section 4 `a`/`b` outputs and the `g_core_properties` split.
-- [ ] Decide the proof source for the Section 5 sign lemmas (`Romik/Lee` replacement proof versus an in-repo certificate) before committing to the endgame for `g`.
+- [ ] Construct actual `PaperAWitness` and `PaperBWitness` data in separate Section 4 support files and use them to discharge the thin wrappers for `theoremAStatement` and `theoremBStatement`.
+- [x] Make the proof source for the Section 5 sign lemmas explicit: default to Lee 2024's algebraic proof, with Romik 2023 as the fallback cross-check instead of undocumented interval arithmetic.
+- [ ] Translate the chosen Section 5 source into Lean-ready lemmas for `ANeg` and `BPos` before committing to the endgame for `g`.
 
 ## Completed
 - [x] Read `repo/paper/arxiv-1603.04246.tex` from start to finish and performed a first mathematical audit.

@@ -1,4 +1,4 @@
-import PaperDefinitions
+import Dim8.Section4Support
 
 noncomputable section
 
@@ -41,6 +41,12 @@ def theoremAStatement : Prop :=
       HasSphericalValue a (Real.sqrt 2) 0 ∧
       HasRadialDerivativeAt a (Real.sqrt 2) paperADerivativeAtSqrtTwo
 
+/-- A thin paper-facing wrapper: an internal Section 4 witness for `a` yields the public theorem
+statement. -/
+theorem theoremAStatement_of_paperAWitness (w : PaperAWitness) : theoremAStatement := by
+  refine ⟨w.a, w.isPaperFunctionA, w.doubleZeros, w.valueAtZero, w.valueAtSqrtTwo,
+    w.derivAtSqrtTwo⟩
+
 /-- Section 4 public output for the function `b`. -/
 def theoremBStatement : Prop :=
   ∃ b : SchwartzR8,
@@ -49,6 +55,12 @@ def theoremBStatement : Prop :=
       HasSphericalValue b 0 0 ∧
       HasSphericalValue b (Real.sqrt 2) 0 ∧
       HasRadialDerivativeAt b (Real.sqrt 2) paperBDerivativeAtSqrtTwo
+
+/-- A thin paper-facing wrapper: an internal Section 4 witness for `b` yields the public theorem
+statement. -/
+theorem theoremBStatement_of_paperBWitness (w : PaperBWitness) : theoremBStatement := by
+  refine ⟨w.b, w.isPaperFunctionB, w.doubleZeros, w.valueAtZero, w.valueAtSqrtTwo,
+    w.derivAtSqrtTwo⟩
 
 /-- Paper-faithful core statement of Theorem `g`, with `g` tied to the stated linear combination
 of `a` and `b`. -/

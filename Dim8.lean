@@ -4,6 +4,6 @@ import Dim8.PackingBounds
 import Dim8.FourierAux
 import Dim8.ModularFormsAux
 import Dim8.Section5Signs
-import Dim8.AuxiliaryFunctions
-import Dim8.PaperDefinitions
-import Dim8.PaperTheorems
+import Dim8.Section4Support
+import PaperDefinitions
+import PaperTheorems

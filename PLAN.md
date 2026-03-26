@@ -145,7 +145,7 @@
     - `B_pos : ∀ t > 0, 0 < B t`
   - Keep the proof source explicit:
     - paper-faithful note: original manuscript uses undocumented interval arithmetic,
-    - recommended implementation route: later direct proofs (Romik / Lee),
+    - default implementation route: Lee 2024's algebraic proof, with Romik 2023 as a fallback cross-check,
     - fallback route: a checked in-repo certificate if later sources are intentionally avoided.
 - Track 6: final assembly
   - combine `a` and `b` into `g`,
@@ -175,7 +175,7 @@
 - Risk: the coordinate description of `E_8` is elegant but not the easiest internal representation.
   - Default choice: basis-first internally, equivalence-to-paper externally.
 - Risk: the paper's Section 5 proof is not fully reproducible as written.
-  - Default choice: plan against later direct proofs, not undocumented interval arithmetic.
+  - Default choice: use Lee 2024 for the sign inequalities, not undocumented interval arithmetic.
 - Risk: the theorem-level exact-zero/nonvanishing clause is not proved by the 2016 manuscript.
   - Default choice: exclude it from the paper-faithful core and record it as an optional later-source extension.
 
