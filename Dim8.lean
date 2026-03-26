@@ -3,6 +3,7 @@ import Dim8.E8Lattice
 import Dim8.PackingBounds
 import Dim8.FourierAux
 import Dim8.ModularFormsAux
+import Dim8.Section4B
 import Dim8.Section5Signs
 import Dim8.Section4Support
 import PaperDefinitions

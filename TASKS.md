@@ -11,10 +11,11 @@
 
 ## Worker Tasks
 - [x] Replace the paper-facing `E_8` predicates with an actual internal lattice object and prove the first interface lemmas in `Dim8/E8Lattice.lean` (`e8SquaredNorm`, `e8PositiveSquaredNorm`, `e8MinimalDistance`).
-- [ ] Use the now-defined modular inputs (`phi` layer, `h`, `psi_I`, `psi_T`, `psi_S`) to define the first raw `a` or `b` profile from the paper's integral formulas.
+- [x] Use the now-defined modular inputs (`phi` layer, `h`, `psi_I`, `psi_T`, `psi_S`) to define the first raw `a` or `b` profile from the paper's integral formulas.
+- [ ] Promote the new raw `b` profile in `Dim8/Section4B.lean` into an actual `PaperBWitness`, starting with the regularity and special-value fields that do not yet depend on the final sign lemmas.
 - [ ] Construct actual `PaperAWitness` and `PaperBWitness` data in separate Section 4 support files and use them to discharge the thin wrappers for `theoremAStatement` and `theoremBStatement`.
 - [x] Make the proof source for the Section 5 sign lemmas explicit: default to Lee 2024's algebraic proof, with Romik 2023 as the fallback cross-check instead of undocumented interval arithmetic.
-- [ ] Translate the chosen Lee 2024 source into proved Lean lemmas for the concrete kernel targets `PaperANeg` and `PaperBPos`.
+- [ ] Translate the chosen Lee 2024 source into proved Lean lemmas for the concrete kernel targets `PaperANeg` and `PaperBPos`; the first simplification lemmas for `paperAKernel`/`paperBKernel` on `t > 0` and `t ≤ 0` are now in place.
 
 ## Completed
 - [x] Read `repo/paper/arxiv-1603.04246.tex` from start to finish and performed a first mathematical audit.
@@ -27,3 +28,4 @@
 - [x] Strengthened the `g` interface so Fourier-side nonnegativity is stated as a real-valued nonnegativity condition, and added explicit double-zero clauses for the Section 4 public `a`/`b` statements.
 - [x] Replaced the empty `Dim8/ModularFormsAux.lean` placeholder with actual Section 4 modular-form definitions for `E4`, `E6`, `varphi_{-2}`, `varphi_{-4}`, `phi_{-2}`, `phi_{-4}`, `phi_0`, and their positive-imaginary-axis evaluation helpers.
 - [x] Finished the remaining Section 4 modular ingredients in `Dim8/ModularFormsAux.lean` by defining `theta_{00}`, `theta_{01}`, `theta_{10}`, `h`, `psi_I`, `psi_T`, and `psi_S`, and translated the paper's Section 5 kernels into the concrete Lean definitions `paperAKernel`, `paperBKernel`, `PaperANeg`, and `PaperBPos`.
+- [x] Added `Dim8/Section4B.lean` with the first raw Section 4 `b`-profile formula and its associated radial function, and proved the initial structural simplification lemmas for the concrete Section 5 kernels.
