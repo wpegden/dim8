@@ -130,7 +130,7 @@
     coefficient-growth bounds.
   - Use mathlib's `UpperHalfPlane`, `E2`, and Jacobi theta machinery where possible; add local wrappers for the paper's exact formulas.
   - Current state:
-    the `E4`/`E6`/`varphi`/`phi` layer is now defined in `Dim8/ModularFormsAux.lean`; the next missing modular ingredients are `h`, `psi_I`, `psi_T`, and `psi_S`.
+    the `E4`/`E6`/`varphi`/`phi` layer and the theta-based `h`, `psi_I`, `psi_T`, `psi_S` layer are now defined in `Dim8/ModularFormsAux.lean`; the next missing step is to turn them into raw `a`/`b` profiles and the Lee-style sign lemmas for the concrete kernels.
 - Track 4: definitions and properties of `a` and `b`
   - Decide the implementation-level definition carefully.
   - Preferred default:
