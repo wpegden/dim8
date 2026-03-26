@@ -129,6 +129,8 @@
     q-expansions,
     coefficient-growth bounds.
   - Use mathlib's `UpperHalfPlane`, `E2`, and Jacobi theta machinery where possible; add local wrappers for the paper's exact formulas.
+  - Current state:
+    the `E4`/`E6`/`varphi`/`phi` layer is now defined in `Dim8/ModularFormsAux.lean`; the next missing modular ingredients are `h`, `psi_I`, `psi_T`, and `psi_S`.
 - Track 4: definitions and properties of `a` and `b`
   - Decide the implementation-level definition carefully.
   - Preferred default:
