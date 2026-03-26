@@ -2,10 +2,10 @@
 
 <!-- SUPERVISOR_TASKS:START -->
 ## Supervisor Tasks
-- [ ] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
-- [ ] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
-- [ ] Keep the files easy for a human to compare against the paper.
-- [ ] Make both files syntactically valid Lean.
+- [x] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
+- [x] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
+- [x] Keep the files easy for a human to compare against the paper.
+- [x] Make both files syntactically valid Lean.
 <!-- SUPERVISOR_TASKS:END -->
 
 ## Worker Tasks
@@ -19,3 +19,4 @@
 - [x] Checked the Section 5 frontier against later primary sources and confirmed that the interval-arithmetic step is replaceable, but the extra nonvanishing clause for `g` is not proved by the 2016 manuscript itself.
 - [x] Wrote a comprehensive `PLAN.md` that separates the paper-faithful core from optional later-source extensions.
 - [x] Added `PaperDefinitions.lean`, `PaperTheorems.lean`, and the initial support-module skeleton with paper-facing core definitions and theorem signatures.
+- [x] Tightened the root `PaperDefinitions.lean` and `PaperTheorems.lean` files so they carry the real public statement surface: typed Schwartz/Fourier data on `R8`, the explicit linear combination defining `g`, non-tautological `E_8` interface statements, and standalone Lake build targets.

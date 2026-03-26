@@ -9,7 +9,7 @@ noncomputable section
 namespace Dim8
 
 /-- The ambient Euclidean space used throughout the paper. -/
-abbrev R8 := Fin 8 → ℝ
+abbrev R8 := EuclideanSpace ℝ (Fin 8)
 
 /-- Squared Euclidean norm on `R8`. -/
 def sqNorm (x : R8) : ℝ := ‖x‖ ^ 2
