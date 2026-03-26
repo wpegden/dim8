@@ -1,1 +1,9 @@
 import Dim8.Basic
+import Dim8.E8Lattice
+import Dim8.PackingBounds
+import Dim8.FourierAux
+import Dim8.ModularFormsAux
+import Dim8.Section5Signs
+import Dim8.AuxiliaryFunctions
+import Dim8.PaperDefinitions
+import Dim8.PaperTheorems

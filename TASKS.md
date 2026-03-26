@@ -2,19 +2,20 @@
 
 <!-- SUPERVISOR_TASKS:START -->
 ## Supervisor Tasks
-- [ ] Use `repo/paper/arxiv-1603.04246.tex`, `PAPERNOTES.md`, and the current repo state to build `PLAN.md`.
-- [ ] Produce a comprehensive roadmap for definitions, theorem statements, and proof dependencies.
-- [ ] Identify what can come from mathlib versus what must be formalized here.
-- [ ] Use `NEED_INPUT` for external-result or design-choice questions that need a human decision.
+- [ ] Create `PaperDefinitions.lean` with the definitions needed to state the paper results.
+- [ ] Create `PaperTheorems.lean` with theorem statements as close to the paper as Lean allows.
+- [ ] Keep the files easy for a human to compare against the paper.
+- [ ] Make both files syntactically valid Lean.
 <!-- SUPERVISOR_TASKS:END -->
 
 ## Worker Tasks
-- [ ] Create `PaperDefinitions.lean` and internal support modules following `PLAN.md`.
-- [ ] Choose and implement the internal definition of the `E_8` lattice, then prove equivalence with the paper's coordinate description.
-- [ ] Decide the source route for the Section 5 sign lemmas (`Romik/Lee` replacement proof versus an in-repo certificate) before deep proof work starts.
+- [ ] Replace the paper-facing `E_8` predicates with an actual internal lattice object and begin proving the interface lemmas in `Dim8/E8Lattice.lean`.
+- [ ] Refine the abstract statement bundles in `PaperTheorems.lean` into proved theorems, starting with the `E_8` lattice interface and the `g_core_properties` split.
+- [ ] Decide the proof source for the Section 5 sign lemmas (`Romik/Lee` replacement proof versus an in-repo certificate) before committing to the endgame for `g`.
 
 ## Completed
 - [x] Read `repo/paper/arxiv-1603.04246.tex` from start to finish and performed a first mathematical audit.
 - [x] Recorded initial corrections, proof dependencies, and open questions in `repo/PAPERNOTES.md`.
 - [x] Checked the Section 5 frontier against later primary sources and confirmed that the interval-arithmetic step is replaceable, but the extra nonvanishing clause for `g` is not proved by the 2016 manuscript itself.
 - [x] Wrote a comprehensive `PLAN.md` that separates the paper-faithful core from optional later-source extensions.
+- [x] Added `PaperDefinitions.lean`, `PaperTheorems.lean`, and the initial support-module skeleton with paper-facing core definitions and theorem signatures.
